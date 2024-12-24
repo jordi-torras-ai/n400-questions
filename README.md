@@ -10,7 +10,7 @@ This project is a Python-based quiz application designed to help individuals pra
 - **src/**: Python source code for the quiz application.
 
 ### Key Files:
-- `uscis_questions.numbers`: The master file for editing the questions. Update state-specific answers here.
+- `uscis_questions.numbers`: The master file for editing the questions. Update state-specific answers here as well as Congressional District question (there is only one).
 - `uscis_questions.csv`: The CSV file generated from the `.numbers` file, used by the quiz application.
 - `n400.py`: The main Python script for running the quiz.
 - Shell scripts:
@@ -38,18 +38,21 @@ pip install pandas
    - Update the answers to reflect your state's representatives and any other state-specific details.
    - Save the file as a CSV named `uscis_questions.csv` using the script:
      ```bash
-     ./uscis_questions.sh
+     cd shell
+     bash uscis_questions.sh
      ```
 
 2. **Run the Quiz:**
    Use one of the provided shell scripts to start the quiz in your preferred mode. Examples:
    - To go through all questions:
      ```bash
-     ./n400_all.sh
+     cd shell # if necessary
+     bash n400_all.sh
      ```
    - To practice random questions:
      ```bash
-     ./n400.sh
+     cd shell # if necessary
+     bash n400.sh
      ```
 
 3. **Tracking Progress:**
@@ -64,7 +67,7 @@ pip install pandas
 - **Practice Least Asked Questions (`n400_ask_least.sh`)**: Asks the top 10 least asked questions.
 
 ## How to Use the Application
-1. Start by editing the `.numbers` file with state-specific details.
+1. Start by editing the `.numbers` file with state-specific, and congrational district details.
 2. Convert the `.numbers` file into a CSV using `uscis_questions.sh`.
 3. Use one of the provided shell scripts to practice questions.
 
@@ -75,13 +78,15 @@ During each session, the following features are available:
 - Statistics on total questions, correct answers, and performance percentage are displayed.
 
 ### Example Commands
-- To display the top 10 difficult questions:
+- To practice with random questions, the most errors you make with a question, the higher the probability it will be shown again:
   ```bash
-  ./n400_top.sh
+  cd shell # if necessary
+  bash n400.sh
   ```
-- To practice the least-asked questions:
+- To practice the test with 100 questions. Ideally should answer correctly 100% of the questions. 
   ```bash
-  ./n400_ask_least.sh
+  cd shell # if necessary
+  bash n400_all.sh
   ```
 
 ## ANSI Colors
@@ -96,4 +101,3 @@ The quiz uses ANSI escape codes to colorize the terminal output:
 
 ## Author
 Developed by Jordi Torras. For inquiries or suggestions, please contact [your email or website].
-
